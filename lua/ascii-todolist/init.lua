@@ -2,6 +2,7 @@ local ui = require("ascii-ui")
 local Paragraph = ui.components.Paragraph
 local For = require("ascii-ui.components.for")
 local If = require("ascii-ui.components.if")
+local Button = ui.components.Button
 
 local M = {}
 
@@ -24,13 +25,13 @@ M.open = function()
 							content = item,
 						}
 					end,
-					component = ui.components.Paragraph,
+					component = Paragraph,
 				}),
 				fallback = Paragraph({
 					content = "No todos available",
 				}),
 			}),
-			ui.components.Button({
+			Button({
 				label = "Add Todo",
 				on_press = function()
 					M.todos[#M.todos + 1] = "Todo " .. #M.todos + 1
