@@ -3,6 +3,7 @@ local Paragraph = ui.components.Paragraph
 local For = require("ascii-ui.components.for")
 local If = require("ascii-ui.components.if")
 local Button = ui.components.Button
+local TodoItem = require("ascii-todolist.components.TodoItem")
 
 local M = {}
 
@@ -25,7 +26,7 @@ M.open = function()
 							content = item,
 						}
 					end,
-					component = Paragraph,
+					component = TodoItem,
 				}),
 				fallback = Paragraph({
 					content = "No todos available",
