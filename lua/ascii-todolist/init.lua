@@ -34,7 +34,8 @@ M.open = function()
 			Button({
 				label = "Add Todo",
 				on_press = function()
-					M.todos[#M.todos + 1] = "Todo " .. #M.todos + 1
+					local new_todo = vim.fn.input("new todo: ")
+					M.todos[#M.todos + 1] = new_todo
 
 					setTodos(M.todos)
 				end,
