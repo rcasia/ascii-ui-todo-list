@@ -1,5 +1,4 @@
 local ui = require("ascii-ui")
-local If = require("ascii-ui.components.if")
 local TodoList = require("ascii-todolist.components.TodoList")
 
 local M = {}

@@ -10,7 +10,12 @@ local function TodoList()
 	local todos, setTodos = ui.hooks.useState({ "Todo 1" })
 
 	return Layout(
-		Paragraph({ content = "My Today Tasks" }),
+		Paragraph({
+			content = function()
+				local count = #todos()
+				return ("My Today Tasks! (%d/%d)"):format(0, count)
+			end,
+		}),
 		--
 		Button({
 			label = "Add Todo",
