@@ -45,4 +45,4 @@ local function TodoList()
 	)
 end
 
-return ui.createComponent("TodoItem", TodoList)
+return ui.createComponent("TodoList", TodoList)
