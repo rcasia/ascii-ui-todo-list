@@ -7,4 +7,4 @@ local function TodoItem(props)
 	return ui.components.Paragraph({ content = props.content })
 end
 
-return ui.createComponent("TodoItem", TodoItem, { content = string })
+return ui.createComponent("TodoItem", TodoItem, { content = "string" })
