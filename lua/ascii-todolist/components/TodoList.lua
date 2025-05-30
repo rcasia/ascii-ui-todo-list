@@ -1,10 +1,10 @@
 local ui = require("ascii-ui")
-local For = ui.directives.For
+local For = ui.components.For
 local TodoItem = require("ascii-todolist.components.TodoItem")
 local Column = ui.layout.Column
 local Paragraph = ui.components.Paragraph
 local Button = ui.components.Button
-local If = ui.directives.If
+local If = ui.components.If
 
 local function TodoList()
 	local todos, setTodos = ui.hooks.useState({ "Todo 1" })
@@ -12,10 +12,7 @@ local function TodoList()
 	return function()
 		return Column(
 			Paragraph({
-				content = function()
-					local count = #todos()
-					return ("My Today Tasks! (%d/%d)"):format(0, count)
-				end,
+				content = ("My Today Tasks! (%d/%d)"):format(0, #todos()),
 			}),
 			--
 			Button({
